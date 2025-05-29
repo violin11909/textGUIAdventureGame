@@ -16,8 +16,8 @@ import javax.swing.JTextArea;
 public class Game {
 	JFrame window;
 	Container con;
-	JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel;
-	JLabel titleNameLabel;
+	JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel;
+	JLabel titleNameLabel, hpLabel, hpLabelNumber, weaponLabel, weaponLabelName;
 	JTextArea mainTextArea;
 	Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
 	Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
@@ -109,6 +109,32 @@ public class Game {
 		choice4.setForeground(Color.white);
 		choice4.setFont(normalFont);
 		choiceButtonPanel.add(choice4);
+		
+		playerPanel = new JPanel();
+		playerPanel.setBounds(100, 15, 600, 50);
+		playerPanel.setBackground(Color.blue);
+		playerPanel.setLayout(new GridLayout(1, 4));
+		con.add(playerPanel);
+		
+		hpLabel = new JLabel("HP: ");
+		hpLabel.setFont(normalFont);
+		hpLabel.setForeground(Color.white);
+		playerPanel.add(hpLabel);
+		
+		hpLabelNumber = new JLabel();
+		hpLabelNumber.setFont(normalFont);
+		hpLabelNumber.setForeground(Color.white);
+		playerPanel.add(hpLabelNumber);
+		
+		weaponLabel = new JLabel("Weapon: ");
+		weaponLabel.setFont(normalFont);
+		weaponLabel.setForeground(Color.white);
+		playerPanel.add(weaponLabel);
+		
+		weaponLabelName = new JLabel();
+		weaponLabelName.setFont(normalFont);
+		weaponLabelName.setForeground(Color.white);
+		playerPanel.add(weaponLabelName);
 	}
 	
 	public class TitleScreenHandler implements ActionListener{
